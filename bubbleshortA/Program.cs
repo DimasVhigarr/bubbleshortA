@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,10 +38,37 @@ namespace bubbleshortA
                     string s1 = Console.ReadLine();
                     a[1] = Int32.Parse(s1);
                 }
-
-
-
             }
+            public void display()
+            {
+                Console.WriteLine("");
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine("Element array yang telah tersusun");
+                Console.WriteLine("---------------------------------");
+                for (int j = 0; j < n; j++)
+                {
+                    Console.WriteLine(a[j]);
+                }
+                Console.WriteLine("");
+            }
+
+            public void BubbleSortArray()
+            {
+                for (int i = 1; i < n; i++)
+                {
+                    for (int j = 0; j < n-i; j++)
+                    {
+                        if (a[j] < a[j + 1])
+                        {
+                            int temp;
+                            temp = a[j];
+                            a[j] = a[j + 1];
+                            a[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }
